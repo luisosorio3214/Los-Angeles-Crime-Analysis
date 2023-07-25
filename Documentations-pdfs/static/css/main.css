@@ -1,0 +1,9 @@
+body {
+  font-family: roboto;
+  background-color: rgb(247, 223, 227);
+}
+
+.content {
+  max-width: 1150px;
+  margin: auto;
+}

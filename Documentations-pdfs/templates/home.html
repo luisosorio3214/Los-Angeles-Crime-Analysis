@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LA Crime</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\static\css\main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="content">
+      <h1 align="center"> Los Angeles Crime Analysis</h1>
+      <p align="center">By Luis Osorio</p>
+      <div>
+        <h3><u>Context:</u></h3>
+        <p>
+          I have lived in Los Angeles my entire life particularly in the areas deemed the most dangerous. Entertainments in movies and shows such as 'Boyz N The Hood', 'South Central', and most recently 'Snowfall' have shown the entire world what life was like in South Central Los Angeles, my hometown. Despite the worst periods such as in the 80s/90s, crime has substantially fallen compared to those periods, however, various areas in Los Angeles are still bad. Now I have read several articles about crime in other cities and surprisingly Los Angeles was not even in the top 10 most dangerous cities in America from a 2023, <a href="https://www.southwestjournal.com/most-dangerous-cities-in-the-us-2023-a-comprehensive-analysis/" target="_blank"> news article</a>. Where St. Louis, Missouri rank the most dangerous city in America and Detroit, Michigan taking the number two spot. As a resident of Los Angeles I get to see a first hand view of the crime in the city and some notable observations I saw was an increase in crime around 2016 when Trump got into office and a resurgence of crime after the pandemic. As a data analyst, I wanted to investigate some crime data particularly in my city and see if any noticeable trends occured. I wrote down some key questions I wanted to answer. <br> <br>
+          <h3><u>Questions to Answer</u></h3>
+          <ol>
+            <li>What was the overall crime trend in Los Angeles over the last couple years?</li>
+            <li>What areas in Los Angeles are considered the most dangerous?</li>
+            <li>What crime types were the most prevalent in the last couple of years?</li>
+            <li>How does crime compared quarterly throughout the year?</li>
+          </ol>
+          <br>
+          <h3><u>Hypothesis</u></h3>
+          <ol>
+            <li>Crime was cooling up to 2016, where it ticked back up and same for 2021.</li>
+            <li>Downtown Los Angeles is one of the worst areas.</li>
+            <li>I suppose theft and assualt being some of the top crimes committed.</li>
+            <li>Usually around summer time, crime gets worst compare to in the winter.</li>
+          </ol>        
+          <h3><u>Data Set Information:</u></h3>
+          I gathered the data from the LA City Website, which came in two big excel files where one contained <a href="https://data.lacity.org/Public-Safety/Crime-Data-from-2010-to-2019/63jg-8b9z" target="_blank">Los Angeles crime data from 2010 to 2019</a>, and had a total of 2,135,664 observations. The second excel file contained <a href="https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8" target="_blank">crime data from 2020 to the most recent date July, 2023</a> and came with 757,141 observation points. 
+          <h3><u>Tools Used for Analysis</u></h3>
+          <ol>
+            <li>Planet Scale - Cloud Storage(AWS Database)</li>
+            <li>MySQL (Data cleaning)</li>
+            <li>Python (For Visualizations)</li>
+            <li>Power BI (Dashboard Embedding)</li>
+            <li>Flask (backend deployment)</li>
+          </ol>  
+        </p>
+      </div>
+      <div>
+        <h3 align="center">Data Analysis</h3>
+        The first challenge that I faced in this project was the large amount of data which became an issue when storing the data. Also immediately knew that my Power BI Service comes with limitations with the amount of data it can handle for my dashboard creation, luckily felt short under 1 GB which was the maximum. Second, I cleaned the data by fixing the date column which came as a string, renamed some of the columns, and dropping some useless attributes. Then I combined the two tables with a Union statement and formulated my own table to gain the entire picture which almost had 3 million rows. I loaded the database onto python using SQLAlchemy and continued my visualizations process. Some of the key metrics I wanted to focus on was crime count and average victim age. 
+        <p align="center">
+          <img src="..\static\Images\crime_year.png" title="Total Crime by Year" height="400" width="700">
+        </p>
+        From the chart above, we can see that crime started to increase after a decrease around 2014 and reached a high point around 2015. My hypothesis about crime after the pandemic was correct where we saw a huge increase and reaching over 200,000 crimes in just 2022. Note: The count involves all types of crimes committed some more severe than others. Also observe the sharp decline in 2023, that's because the crime count for this year is still being counted while we are half way through the year. 
+        <p align="center">
+          <img src="..\static\Images\crime_2018_2022.png" title="Total Crime by Year" height="400" width="700">
+        </p>
+        The crime count between the years 2018 and 2022, we can see crime decrease 17% in 2 years and then it rose 22% after the pandemic. Next we see which area of Los Angeles are the most dangerous. 
+        <P align="center">
+          <img src="..\static\Images\area_year.png" title="Total Crime by Year" height="350" width="540">
+          <img src="..\static\Images\area_2020_2023.png" title="Total Crime by Year" height="350" width="540">
+        </P>
+        The police divisions are divided into areas in L.A. which are named on the y-axis and we can see during the time period 2010-2023, 77th Street division has been one of the most dangerous areas. It is specifically located in South LA and the division specified by the location of my house. Now comparing only the last 3 years, we can see the most dangerous area in Los Angeles was the central area which also make sense and includes areas such as Downtown, Hollywood, Wilshire, and Korea Town. Personally, I have seen through out the years that area has become a hot spot for a lot of thefts. ALso during the pandemic, I recall a lot of protest around that specific area. 
+        <p align="center">
+          <img src="..\static\Images\crime_quarter.png" title="Total Crime by Year" height="400" width="700">
+        </p>
+        Now comparing quarterly crime throughout the year we can see there is a bit more crime during Q2 & Q3 but the difference is hardly noticeable. Therefore, we can say the quarters of the year do not make a difference in crime which I was surprised since I guess around Summer It would have been more dangerous since more people are outside. Next we check the most prevalent crime types.  
+        <P align="center">
+          <img src="..\static\Images\crime_type_year.png" title="Total Crime by Year" height="350" width="540">
+          <img src="..\static\Images\crime_type_2018_2023.png" title="Total Crime by Year" height="350" width="540">
+        </P>
+        The most prevalent crimes in 2010-2023 were battery-simple assault, vehicle stolen, Burglary from vehicle, and burglary in general. Los Angeles is notorious for burglary, honestly when I walk around in downtown Los Angeles I always make sure to hide any flashy clothing. You always have to know the area you in and always take safety precautions by knowing your environment. I be amazed by how many people miss this important fact. The top 5 crime types between 2018 - 2023 were similar but with slightly different ordering. 
+        <h3 align="center">Victim Analysis</h3>
+        Here I wanted to look at the crime count on the victims by sex. Most of the crimes were against males, however, the difference compared to female victims was huge with about a 11% difference. 
+        <p align="center">
+          <img src="..\static\Images\victim_gender.png" title="Total Crime by Year" height="300" width="400">
+        </p>   
+        <P align="center">
+          <img src="..\static\Images\victim_ethnicity.png" title="Total Crime by Year" height="350" width="540">
+          <img src="..\static\Images\Descent.png" title="Total Crime by Year" height="400" width="300">
+        </P>
+        Most of the victims age on average regardless of ethnicity seemed to be over 30 years old. This was quite interesting to me, I would have expected more crimes to be committed on the younger population. Now Check Out the dashboard, I have created to see a timeline of hot spots in Los Angeles.
+        <h2 align="center"><u>Los Angeles Hot Spots Timeline</u></h2>    
+        <p align="center">
+          <iframe title="Report Section" width="1000" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiMTg1ODgyZjAtODQxOS00NTUwLWFiOWYtMmVlYjA5NDVjYThjIiwidCI6ImQxNzU2NzliLWFjZDMtNDY0NC1iZTgyLWFmMDQxOTgyOTc3YSIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+        </p>
+        <div>
+          <h2 align="center">Contact Me:</h2>
+          <p align="center">
+            <a href="https://www.linkedin.com/in/luisosorio3214/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" title="LinkedIn" height="25%" width="25%"></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
