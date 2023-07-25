@@ -158,3 +158,8 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+Data/crime_geo.csv
+Data/Crime_Data_from_2010_to_2019.csv
+Dashboards/LA-HotSpot.pbix
+Dashboards/LA-Crime.pbix
+Data/Crime_Data_from_2020_to_Present.csv
