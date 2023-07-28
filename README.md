@@ -140,16 +140,16 @@
     <p>
       One SQL Query for Data Cleaning
       <p>
-        <img src="Static\Images\sql_data_cleaning.png">
+        <img src="static\Images\sql_data_cleaning.png">
       </p>
     </p>
     <p>
       Data Exploration using SQL
       <p>
-        <img src="Static\Images\sql_queries.png">
+        <img src="static\Images\sql_queries.png">
       </p>
       <p>
-        <img src="Static\Images\dashboard_queries.png">
+        <img src="static\Images\dashboard_queries.png">
       </p>
     </p>
     <p>
@@ -159,8 +159,8 @@
         <li>After Performing Data Cleansing using SQL: I used a python library called SQLAlchemy to connect to my database engine so I can create visualizations. I leveraged well-known libraries such as Matplotlib and Seaborn to pull specific data from my database engine and create my engine. Now I did now want to pull the full 3 million rows of data onto my python script, so used the queries I created to generate the specific data. After I created my visualizations, I saved the images to a directory so I can build my report. Now during my data exploratory, I saw that each crime was allocated a latitude and longitude coordinates and recognized I use to to create a power report on Power Bi using the geo-map visualizations. I created a geo-map visualizations where I further used other tools such as slicers so the end-user can filter the data to see specific crime locations and time frames. The organize all my work, I decided to display my report onto a web page so I used HTML & CSS to create the page.</li>
       </ul>
       <p>
-      Here is a quick peak of the resulting Dashboard that I created:
-      <img src="static\Images\dashboard_gif.gif" title="dashboard">
+        Here is a quick peak of the resulting Dashboard that I created:
+        <img src="static\Images\dashboard_gif.gif" title="dashboard">
       </p>
     </p>
   </section>
@@ -172,8 +172,7 @@
   <p>
     <ul>
       <li>The main take away I learned through this project was how to connect to my database using python. This will give me a huge advantage since I consider myself a python programmer, I'm quite familiar with various python packages. For example, I often use pandas and numpy for my data analysis, however, I was always connecting to various tables through other data sources such as cvs, json, links, excel, and pdfs to put them into data frames. However, now I Can use SQL to query specific data and put them into a data frame So I can work with easily. I also learned the security aspect of connecting to my database since I frequently, upload my work onto GitHub a free open source, I didn't want anyone to login onto my database. To fix this issue, I created an environment variable to store sensitive information and keep them secret so nobody would wipe out my data on my database.</li> 
-      <li>Also I learned how to deploy web applications using Flask, a micro web framework written in python. Using my written HTML code, I was easily able to create a flask app to deploy my code onto the web, however, another issue arose since the server was only available locally which is only used for testing purposes. I had to find a way to deploy the web application onto the cloud so the serve will stay up even after I close my code editor. Thats when I used Render to deploy my application onto the web.</li>
-      
+      <li>Also I learned how to deploy web applications using Flask, a micro web framework written in python. Using my written HTML code, I was easily able to create a flask app to deploy my code onto the web, however, another issue arose since the server was only available locally which is only used for testing purposes. I had to find a way to deploy the web application onto the cloud so the serve will stay up even after I close my code editor. Thats when I used Render to deploy my application onto the web.</li>   
     </ul>
   </p>
 </p>
@@ -205,6 +204,15 @@
         <pre>
           <code style="height: 50%;">
           app = Flask(__name__)
+          </code>
+        </pre>
+      <h4>Use route decorator to tell Flask what URL to trigger </h4>
+        <pre>
+          <code style="height: 50%;">
+          app = Flask(__name__)
+          @app.route("/")
+          def hello_world():
+              return "<p>Hello, World!</p>"
           </code>
         </pre>
       <p>Just like that you have created your first flask application. Of course to create a more complicate application you would return an HTML template with your function under your route. I highly recommend you view the Flask documentation <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)">here</a></p>
