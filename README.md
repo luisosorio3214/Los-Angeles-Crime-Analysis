@@ -212,7 +212,7 @@
           app = Flask(__name__)
           @app.route("/")
           def hello_world():
-              return '''<p>Hello, World!</p>'''
+              return "HTML code Here"
           </code>
         </pre>
       <p>Just like that you have created your first flask application. Of course to create a more complicate application you would return an HTML template with your function under your route. I highly recommend you view the Flask documentation <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)">here</a></p>
