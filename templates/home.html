@@ -29,7 +29,7 @@
           </ol>
           <h3><u>Hypothesis</u></h3>
           <ol>
-            <li>Crime was cooling up to 2016, where it ticked back up and same for 2021.</li>
+            <li>Crime was cooling up to 2016, where it ticked back up and crime increased again aroudn 2020.</li>
             <li>Downtown Los Angeles is one of the worst areas.</li>
             <li>I suppose theft and assualt being some of the top crimes committed.</li>
             <li>Usually around summer time, crime gets worst compare to in the winter.</li>
@@ -43,16 +43,17 @@
             <li>Python (For Visualizations)</li>
             <li>Power BI (Dashboard Embedding)</li>
             <li>Flask (backend deployment)</li>
+            <li>Render (Cloud)</li>
           </ol>  
         </p>
       </div>
       <div>
         <h3 align="center">Data Analysis</h3>
-        The first challenge that I faced in this project was the large amount of data which became an issue when storing the data. Also immediately knew that my Power BI Service comes with limitations with the amount of data it can handle for my dashboard creation, luckily felt short under 1 GB which was the maximum. Second, I cleaned the data by fixing the date column which came as a string, renamed some of the columns, and dropping some useless attributes. Then I combined the two tables with a Union statement and formulated my own table to gain the entire picture which almost had 3 million rows. I loaded the database onto python using SQLAlchemy and continued my visualizations process. Some of the key metrics I wanted to focus on was crime count and average victim age. 
+        The first challenge that I faced in this project was the large amount of data which became an issue when storing the data. Also immediately knew that my Power BI Service came with limitations about the amount of data it can handle for my dashboard creation, luckily it felt short under 1 GB which was the maximum. Some of the data prpeparation was that I cleaned the data by fixing the date column which came as a string, renamed some of the columns, and dropped some of the useless attributes for my analysis. Then I combined the two tables with a Union statement and formulated my own table to gain the entire picture which nearly totaled 3 million rows. I connect the database onto python using SQLAlchemy and continued my visualizations process with various libraries such as Matplotlib and Seaborn. Some of the key metrics I wanted to focus on was crime count and average ages for the victims. I also wanted to take advantege of the Longitude and Latitude coordinates of the crimes committed for my reporting tool. 
         <p align="center">
           <img src="..\static\Images\crime_year.png" title="Total Crime by Year" height="400" width="700">
         </p>
-        From the chart above, we can see that crime started to increase after a decrease around 2014 and reached a high point around 2015. My hypothesis about crime after the pandemic was correct where we saw a huge increase and reaching over 200,000 crimes in just 2022. Note: The count involves all types of crimes committed some more severe than others. Also observe the sharp decline in 2023, that's because the crime count for this year is still being counted while we are half way through the year. 
+        From the chart above, we can see that crime started to increase after a steady decline around 2014 and reached a top point around 2015. My hypothesis about crime after the pandemic was correct where we saw a huge increase and reaching a crime count of over 200,000 in just 2022. Note: The count involves all types of crimes committed some more severe than others. Also observe the sharp decline in 2023, that's because the crime count for this year is still being counted while we are barely half way through the year. 
         <p align="center">
           <img src="..\static\Images\crime_2018_2022.png" title="Total Crime by Year" height="400" width="700">
         </p>
@@ -61,18 +62,18 @@
           <img src="..\static\Images\area_year.png" title="Total Crime by Year" height="350" width="540">
           <img src="..\static\Images\area_2020_2023.png" title="Total Crime by Year" height="350" width="540">
         </P>
-        The police divisions are divided into areas in L.A. which are named on the y-axis and we can see during the time period 2010-2023, 77th Street division has been one of the most dangerous areas. It is specifically located in South LA and the division specified by the location of my house. Now comparing only the last 3 years, we can see the most dangerous area in Los Angeles was the central area which also make sense and includes areas such as Downtown, Hollywood, Wilshire, and Korea Town. Personally, I have seen through out the years that area has become a hot spot for a lot of thefts. ALso during the pandemic, I recall a lot of protest around that specific area. 
+        The police divisions are divided into areas in L.A. which are named on the y-axis and we can see during the time period 2010-2023, 77th Street division has been one of the most dangerous areas. It is specifically located in South LA and I'm actually quite familiar with this division. Now comparing only the last 3 years, we can see that the most dangerous area in Los Angeles was central area which composes of areas such as Downtown, Hollywood, Wilshire, and Korea Town. Personally, I have seen through out the years those specific areas become hot spot for a lot of thefts. Also recall during the pandemic, a lot of protest and uproar happening in Downtown. 
         <p align="center">
           <img src="..\static\Images\crime_quarter.png" title="Total Crime by Year" height="400" width="700">
         </p>
-        Now comparing quarterly crime throughout the year we can see there is a bit more crime during Q2 & Q3 but the difference is hardly noticeable. Therefore, we can say the quarters of the year do not make a difference in crime which I was surprised since I guess around Summer It would have been more dangerous since more people are outside. Next we check the most prevalent crime types.  
+        Now comparing quarterly crime throughout the year you can slightly see bit more crime occuring during Q2 & Q3 of the year but honestly, the difference is hardly noticeable. Therefore, you can argue that the quarters of the year do not make a difference in crime which came as a shock to me since I hypothesized that around Summer time it would be more crime inducing. My assumptions was that since more people are outside and the heat would trigger be significant triggers. Next we check some of the most prevalent crime types.  
         <P align="center">
           <img src="..\static\Images\crime_type_year.png" title="Total Crime by Year" height="350" width="540">
           <img src="..\static\Images\crime_type_2018_2023.png" title="Total Crime by Year" height="350" width="540">
         </P>
-        The most prevalent crimes in 2010-2023 were battery-simple assault, vehicle stolen, Burglary from vehicle, and burglary in general. Los Angeles is notorious for burglary, honestly when I walk around in downtown Los Angeles I always make sure to hide any flashy clothing. You always have to know the area you in and always take safety precautions by knowing your environment. I be amazed by how many people miss this important fact. The top 5 crime types between 2018 - 2023 were similar but with slightly different ordering. 
+        The most committed crimes in 2010-2023 were battery-simple assault, vehicle stolen, burglary from vehicle, and burglary in general. Los Angeles is notorious for burglary, always try to avoid wearing flashing items and I often tell people to aware of your surroundings. Now, the top 5 crime types between 2018 - 2023 were similar but with slightly different reordering. 
         <h3 align="center">Victim Analysis</h3>
-        Here I wanted to look at the crime count on the victims by sex. Most of the crimes were against males, however, the difference compared to female victims was huge with about a 11% difference. 
+        Here I wanted to look at the crime count on the victims by sex. Most of the crimes were against males, however, the difference compared to female victims was not huge with a 11% difference. 
         <p align="center">
           <img src="..\static\Images\victim_gender.png" title="Total Crime by Year" height="300" width="400">
         </p>   
@@ -80,7 +81,7 @@
           <img src="..\static\Images\victim_ethnicity.png" title="Total Crime by Year" height="350" width="540">
           <img src="..\static\Images\Descent.png" title="Total Crime by Year" height="400" width="300">
         </P>
-        Most of the victims age on average regardless of ethnicity seemed to be over 30 years old. This was quite interesting to me, I would have expected more crimes to be committed on the younger population. Now Check Out the dashboard, I have created to see a timeline of hot spots in Los Angeles.
+        Most of the victims age on average regardless of ethnicity seemed to be over 30 years old. This was quite interesting to me, why is there a lot of crime being commited on people over 30? Now check out my dashboard creation that displays crime on a map and a play button for a timeline.
         <h2 align="center"><u>Los Angeles Hot Spots Timeline</u></h2>    
         <p align="center">
           <iframe title="Report Section" width="1000" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiMTg1ODgyZjAtODQxOS00NTUwLWFiOWYtMmVlYjA5NDVjYThjIiwidCI6ImQxNzU2NzliLWFjZDMtNDY0NC1iZTgyLWFmMDQxOTgyOTc3YSIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
