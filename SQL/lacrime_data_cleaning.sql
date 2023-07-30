@@ -11,7 +11,7 @@ SELECT count(*) FROM lacrime.crimeto2019;
 SELECT count(*) FROM lacrime.crimeto2020;
 -- COntains 757,141 observations
 
--- Lets check the first date and last date fro crimeto2019
+-- Lets check the first date and last date from crimeto2019
 SELECT Date_RPTD
 FROM lacrime.crimeto2019
 ORDER BY Date_RPTD ASC
@@ -247,3 +247,19 @@ WHERE YEAR BETWEEN 2020 AND 2023;
 select count(*)
 from totalcrime
 where YEAR = 2022;
+
+
+-- SHOPLIFTING CRIME
+-- SHOPLIFTING - PETTY THEFT ($950 & UNDER)
+-- SHOPLIFTING-GRAND THEFT ($950.01 & OVER)
+SELECT YEAR, COUNT(*) AS COUNT
+FROM totalcrime
+WHERE CRM_CD_DESC = "SHOPLIFTING - PETTY THEFT ($950 & UNDER)"
+GROUP BY YEAR
+ORDER BY YEAR ASC;
+
+SELECT YEAR, COUNT(*) AS COUNT
+FROM totalcrime
+WHERE CRM_CD_DESC = "SHOPLIFTING-GRAND THEFT ($950.01 & OVER)"
+GROUP BY YEAR
+ORDER BY YEAR ASC;
